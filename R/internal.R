@@ -126,6 +126,9 @@ function(x, n.ahead, runs, ortho, cumulative, impulse, response, ci, seed, y.nam
     stop("Bootstrap not implemented for this class.\n")
   }
   p <- VAR$p
+
+  # Fix added for IRF to work with exogen variables.
+  exogen <- VAR$exogen
   K <- VAR$K
   obs <- VAR$obs
   total <- VAR$totobs
